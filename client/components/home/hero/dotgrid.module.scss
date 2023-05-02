@@ -10,7 +10,7 @@
 
 .dotWrapper {
   padding: 0.8rem;
-  cursor: crosshair;
+  cursor: grab;
   transition: 0.25s background;
   border-radius: 8px;
 }
@@ -18,7 +18,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+ border-radius: 50%;
   background: linear-gradient(180deg, var(--background), var(--text));
   opacity: 0.35;
 }
@@ -28,6 +28,7 @@
 }
 
 .dotWrapper:hover > .dot {
+  cursor: grabbing;
   background: linear-gradient(
     180deg,
     var(--background),

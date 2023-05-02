@@ -7,7 +7,7 @@ export const DotGrid = () => {
 
   const dots = [];
 
-  const handleDotClick = (e) => {
+  const handleDotClick = (e: any) => {
     anime({
       targets: ".dot-point",
       scale: [

@@ -1,6 +1,15 @@
 import { Reveal } from "@/components/utils/Reveal";
 import styles from "./experience.module.scss";
 
+interface Props {
+  title: string;
+  position: string;
+  time: string;
+  location: string;
+  description: string;
+  tech: string[];
+}
+
 export const ExperienceItem = ({
   title,
   position,
@@ -8,7 +17,7 @@ export const ExperienceItem = ({
   location,
   description,
   tech,
-}) => {
+}: Props) => {
   return (
     <div className={styles.experience}>
       <div className={styles.heading}>

@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export const Reveal = ({ children, width = "fit-content" }) => {
+interface Props {
+  children: JSX.Element;
+  width?: "fit-content" | "100%";
+}
+
+export const Reveal = ({ children, width = "fit-content" }: Props) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
 

@@ -8,7 +8,7 @@ import { Projects } from "./projects/Projects";
 import { Experience } from "./experience/Experience";
 import { Contact } from "./contact/Contact";
 
-export const Home = () => {
+export const Homepage = () => {
   return (
     <>
       <div className={styles.home}>

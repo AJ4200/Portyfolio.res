@@ -12,8 +12,8 @@ export const SideBar = () => {
       threshold: 0.3,
     };
 
-    const callback = (entries) => {
-      entries.forEach((entry) => {
+    const callback = (entries: any) => {
+      entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           setSelected(entry.target.id);
         }
@@ -33,7 +33,7 @@ export const SideBar = () => {
       className={styles.sideBar}
     >
       <span className={styles.logo}>
-        B<span>.</span>
+        P<span>.</span>
       </span>
       <motion.a
         initial={{ x: -70 }}

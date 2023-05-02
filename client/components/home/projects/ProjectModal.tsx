@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./projectmodal.module.scss";
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
@@ -5,6 +6,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
+
+interface Props {
+  isOpen: boolean;
+  setIsOpen: Function;
+  title: string;
+  imgSrc: string;
+  code: string;
+  projectLink: string;
+  tech: string[];
+  modalContent: JSX.Element;
+}
 
 export const ProjectModal = ({
   modalContent,
@@ -15,14 +27,14 @@ export const ProjectModal = ({
   title,
   code,
   tech,
-}) => {
+}: Props) => {
   useEffect(() => {
     const body = document.querySelector("body");
 
     if (isOpen) {
-      body.style.overflowY = "hidden";
+      body!.style.overflowY = "hidden";
     } else {
-      body.style.overflowY = "scroll";
+      body!.style.overflowY = "scroll";
     }
   }, [isOpen]);
 
@@ -69,5 +81,6 @@ export const ProjectModal = ({
 
   if (!isOpen) return <></>;
 
+  // @ts-ignore
   return ReactDOM.createPortal(content, document.getElementById("root"));
 };

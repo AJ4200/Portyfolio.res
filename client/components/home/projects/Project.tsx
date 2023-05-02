@@ -6,6 +6,16 @@ import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { ProjectModal } from "./ProjectModal";
 import styles from "./projects.module.scss";
 
+interface Props {
+  modalContent: JSX.Element;
+  description: string;
+  projectLink: string;
+  imgSrc: string;
+  tech: string[];
+  title: string;
+  code: string;
+}
+
 export const Project = ({
   modalContent,
   projectLink,
@@ -14,7 +24,7 @@ export const Project = ({
   title,
   code,
   tech,
-}) => {
+}: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
